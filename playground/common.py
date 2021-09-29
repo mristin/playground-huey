@@ -85,7 +85,7 @@ def initialize_config() -> Config:
             )
 
     if len(errors) > 0:
-        bullets = "\n".join("* {error}" for error in errors)
+        bullets = "\n".join(f"* {error}" for error in errors)
         raise RuntimeError(f"The configuration is invalid:\n{bullets}")
 
     return config
